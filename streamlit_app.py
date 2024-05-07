@@ -32,7 +32,7 @@ def stats_page():
 
 def graphs_page():
     set.title('DISTRIBUCION DE TICKETS')
-    st.write('Gráficos de los dat's)
+    st.write('Visualización de los datos')
     bar_df = df.groupby('Prioridad')['Code-Req.'].count()
     st.bar_chart(bar_df, use_container_width=True)
 
