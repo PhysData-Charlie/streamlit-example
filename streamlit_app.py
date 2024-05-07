@@ -23,6 +23,7 @@ def home_page():
       st.write('Cargando datos...')
       st.write('Datos actualizados!')
     st.button('Cerrar página', type='primary')
+    st.button('Ordenar')
 
 def stats_page():
     st.header('ESTADISTICAS')
