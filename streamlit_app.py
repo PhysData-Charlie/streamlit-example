@@ -25,13 +25,13 @@ def home_page():
     st.button('Cerrar página', type='primary')
 
 def stats_page():
-    st.title('ESTADISTICAS')
+    st.header('ESTADISTICAS')
     st.write('Estadísticas de los datos')
     stats_df = round(df.describe(),2)
     st.write(stats_df)
 
 def graphs_page():
-    set.title('DISTRIBUCION DE TICKETS')
+    st.header('DISTRIBUCION DE TICKETS')
     st.write('Visualización de los datos')
     bar_df = df.groupby('Prioridad')['Code-Req.'].count()
     #st.bar_chart(bar_df, use_container_width=True)
@@ -39,7 +39,7 @@ def graphs_page():
     st.bar_chart(chart_data)
 
 def theory_page():
-    st.title('MARCO TEÓRICO')
+    st.header('MARCO TEÓRICO')
     st.write('Explicación de los modelos escogidos')
     st.write('.........')
 
