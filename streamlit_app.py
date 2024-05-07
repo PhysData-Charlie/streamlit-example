@@ -40,7 +40,7 @@ def graphs_page():
 if __name __ == '__main__':
     selected_page = st.sidebar.selectbox(
         'Seleccionar página',
-        ('Principal', 'Estadistica', 'Graficos)
+        ('Principal', 'Estadistica', 'Graficos')
     )
 
     if selected_page == 'Principal':
