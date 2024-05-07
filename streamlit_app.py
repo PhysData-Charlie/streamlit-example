@@ -14,13 +14,6 @@ Desarrollado por: Rodrigo Salazar Malasquez
 
 """
 
-df = pd.DataFrame({'Code-Req.': [i for i in range(0,100)], 
-                   'Prioridad': np.random.randint(1,3,size=100),
-                  'Impacto': np.random.randint(1,3,size=100)})
-
-df['Prioridad'] = df['Prioridad'].replace({0: 'Baja', 1: 'Media', 2: 'Alta'})
-df['Impacto'] = df['Impacto'].replace({0: 'Una Persona', 1: 'Un Departamento', 2: 'Un Servicio'})
-
 
 def home_page():
     st.title('PRIORIZACIÓN DE TICKETS')
@@ -46,7 +39,16 @@ def update_data():
   print('In progress')
   
 
-if __name __ == '__main__':
+if __name__ == '__main__':
+
+    # dataset de prueba
+    df = pd.DataFrame({'Code-Req.': [i for i in range(0,100)], 
+                   'Prioridad': np.random.randint(1,3,size=100),
+                  'Impacto': np.random.randint(1,3,size=100)})
+
+    df['Prioridad'] = df['Prioridad'].replace({0: 'Baja', 1: 'Media', 2: 'Alta'})
+    df['Impacto'] = df['Impacto'].replace({0: 'Una Persona', 1: 'Un Departamento', 2: 'Un Servicio'})
+  
     selected_page = st.sidebar.selectbox(
         'Seleccionar página',
         ('Principal', 'Estadistica', 'Graficos')
