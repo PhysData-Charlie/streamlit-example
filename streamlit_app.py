@@ -25,14 +25,21 @@ def home_page():
     st.button('Cerrar página', type='primary')
 
 def stats_page():
+    st.title('PRIORIZACION DE TICKETS')
     st.title('ESTADISTICAS')
     stats_df = df.describe()
     st.write(stats_df)
 
 def graphs_page():
+    st.title('PRIORIZACION DE TICKETS')
     set.title('DISTRIBUCION DE TICKETS')
-    bar_df = df.groupby('Prioridad')['Code-Req'].count()
+    bar_df = df.groupby('Prioridad')['Code-Req.'].count()
     st.bar_chart(bar_df, use_container_width=True)
+
+def theory_page():
+    st.title('PRIORIZACION DE TICKETS')
+    st.header('Explicación de los modelos escogidos')
+    st.write('.........')
 
 def update_data():
   # aqui va el codigo para ejecutar el modelo
@@ -43,8 +50,8 @@ if __name__ == '__main__':
 
     # dataset de prueba
     df = pd.DataFrame({'Code-Req.': [i for i in range(0,100)], 
-                   'Prioridad': np.random.randint(1,3,size=100),
-                  'Impacto': np.random.randint(1,3,size=100)})
+                   'Prioridad': np.random.randint(0,3,size=100),
+                  'Impacto': np.random.randint(0,3,size=100)})
 
     df['Prioridad'] = df['Prioridad'].replace({0: 'Baja', 1: 'Media', 2: 'Alta'})
     df['Impacto'] = df['Impacto'].replace({0: 'Una Persona', 1: 'Un Departamento', 2: 'Un Servicio'})
@@ -57,9 +64,11 @@ if __name__ == '__main__':
     if selected_page == 'Principal':
         home_page()
     elif selected_page == 'Estadistica':
-        graphs_page()
-    elif selected_page == 'Graficos':
         stats_page()
+    elif selected_page == 'Graficos':
+        graphs_page()
+    elif theory_page == 'Marco Teórico':
+        theory_page()
 
 #         size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
 #     ))
