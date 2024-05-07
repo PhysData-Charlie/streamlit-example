@@ -25,17 +25,24 @@ df['Impacto'] = df['Impacto'].replace({0: 'Una Persona', 1: 'Un Departamento', 2
 def home_page():
     st.title('PRIORIZACIÓN DE TICKETS')
     st.header('Dataset')
-    st.write(df.head(10)
+    st.write(df.head(10))
+    if st.button('Actualizar Datos'):
+      st.write('Cargando datos...')
+      st.write('Datos actualizados!')
+    st.button('Cerrar página', type='primary')
 
 def stats_page():
     st.title('ESTADISTICAS')
     stats_df = df.describe()
-    st.write(stats_df)
+    st.write(stats_df))
 
 def graphs_page():
     set.title('DISTRIBUCION DE TICKETS')
     bar_df = df.groupby('Prioridad')['Code-Req'].count()
     st.bar_chart(bar_df, use_container_width=True)
+
+def update_data():
+  
 
 if __name __ == '__main__':
     selected_page = st.sidebar.selectbox(
