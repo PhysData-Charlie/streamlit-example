@@ -19,6 +19,7 @@ def home_page():
     st.title('PRIORIZACIÓN DE TICKETS')
     st.header('Dataset')
     st.write(df.head(10))
+    st.write(df2.head(10))
     if st.button('Actualizar Datos'):
       st.write('Cargando datos...')
       st.write('Datos actualizados!')
@@ -58,7 +59,10 @@ if __name__ == '__main__':
 
     df['Prioridad'] = df['Prioridad'].replace({0: 'Baja', 1: 'Media', 2: 'Alta'})
     df['Impacto'] = df['Impacto'].replace({0: 'Una Persona', 1: 'Un Departamento', 2: 'Un Servicio'})
-  
+
+    # dataset cargado
+    df2 = pd.read_csv('Country-data.csv')
+
     selected_page = st.sidebar.selectbox(
         'Seleccionar',
         ('Principal', 'Estadistica', 'Graficos')
