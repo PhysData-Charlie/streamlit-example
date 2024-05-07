@@ -34,7 +34,7 @@ def graphs_page():
     st.header('DISTRIBUCION DE TICKETS')
     st.write('Visualización de los datos')
     bar_df = df.groupby('Prioridad')['Code-Req.'].count()
-    #st.bar_chart(bar_df, use_container_width=True)
+    st.bar_chart(bar_df, use_container_width=True)
     chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
     st.bar_chart(chart_data)
 
