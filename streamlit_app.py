@@ -40,10 +40,6 @@ def graphs_page():
     chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
     st.bar_chart(chart_data)
 
-def theory_page():
-    st.header('MARCO TEÓRICO')
-    st.write('Explicación de los modelos escogidos')
-    st.write('.........')
 
 def update_data():
   # aqui va el codigo para ejecutar el modelo
@@ -74,6 +70,4 @@ if __name__ == '__main__':
         stats_page()
     elif selected_page == 'Graficos':
         graphs_page()
-    elif theory_page == 'Marco Teórico':
-        theory_page()
 
