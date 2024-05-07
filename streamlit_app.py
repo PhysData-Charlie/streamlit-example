@@ -34,7 +34,7 @@ def home_page():
 def stats_page():
     st.title('ESTADISTICAS')
     stats_df = df.describe()
-    st.write(stats_df))
+    st.write(stats_df)
 
 def graphs_page():
     set.title('DISTRIBUCION DE TICKETS')
