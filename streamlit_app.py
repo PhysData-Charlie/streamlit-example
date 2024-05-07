@@ -25,20 +25,20 @@ def home_page():
     st.button('Cerrar página', type='primary')
 
 def stats_page():
-    st.title('PRIORIZACION DE TICKETS')
     st.title('ESTADISTICAS')
-    stats_df = df.describe()
+    st.write('Estadísticas de los datos')
+    stats_df = round(df.describe(),2)
     st.write(stats_df)
 
 def graphs_page():
-    st.title('PRIORIZACION DE TICKETS')
     set.title('DISTRIBUCION DE TICKETS')
+    st.write('Gráficos de los dat's)
     bar_df = df.groupby('Prioridad')['Code-Req.'].count()
     st.bar_chart(bar_df, use_container_width=True)
 
 def theory_page():
-    st.title('PRIORIZACION DE TICKETS')
-    st.header('Explicación de los modelos escogidos')
+    st.title('MARCO TEÓRICO')
+    st.write('Explicación de los modelos escogidos')
     st.write('.........')
 
 def update_data():
