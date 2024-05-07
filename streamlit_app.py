@@ -34,7 +34,9 @@ def graphs_page():
     set.title('DISTRIBUCION DE TICKETS')
     st.write('Visualización de los datos')
     bar_df = df.groupby('Prioridad')['Code-Req.'].count()
-    st.bar_chart(bar_df, use_container_width=True)
+    #st.bar_chart(bar_df, use_container_width=True)
+    chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+    st.bar_chart(chart_data)
 
 def theory_page():
     st.title('MARCO TEÓRICO')
@@ -57,7 +59,7 @@ if __name__ == '__main__':
     df['Impacto'] = df['Impacto'].replace({0: 'Una Persona', 1: 'Un Departamento', 2: 'Un Servicio'})
   
     selected_page = st.sidebar.selectbox(
-        'Seleccionar página',
+        'Seleccionar',
         ('Principal', 'Estadistica', 'Graficos')
     )
 
@@ -70,5 +72,3 @@ if __name__ == '__main__':
     elif theory_page == 'Marco Teórico':
         theory_page()
 
-#         size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
-#     ))
